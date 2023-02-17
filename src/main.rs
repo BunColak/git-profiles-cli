@@ -186,9 +186,10 @@ fn list_profiles(conn: &Connection) -> Result<()> {
     for profile in profiles {
         let resolved_profile = profile.unwrap();
 
+        let my_str = String::new("Hello there");
         let is_current_profile = resolved_profile.email.as_str() == current_email.as_str();
         let cells = vec![
-            Cell::new(resolved_profile.alias).fg(Color::DarkYellow),
+            Cell::new(resolved_profile.alias).fg(Color::DarkGreen),
             Cell::new(resolved_profile.name).fg(Color::Green),
             Cell::new(resolved_profile.email).fg(Color::Blue),
         ];
