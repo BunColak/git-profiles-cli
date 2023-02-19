@@ -161,7 +161,7 @@ fn get_current_profile() -> String {
 fn list_profiles(conn: &Connection) -> Result<()> {
     let mut profiles_query = conn
         .prepare("select alias, email, name from profiles;")
-        .unwrap();
+        .unwrap(); 
 
     let profiles = profiles_query
         .query_map([], |row| {
